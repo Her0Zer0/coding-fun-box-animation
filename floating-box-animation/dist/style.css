@@ -1,0 +1,82 @@
+body{
+    background-color: rgb(45, 39, 39);
+    font-family: 'BioRhyme', serif;
+}          
+
+.box{
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    width: 100px;    
+    text-align: center;
+    line-height: 5;
+    transform:  rotateY(20deg);
+}
+
+
+/*---------------------------------------------------------------------------
+The box-wrapper is our real hero container here. This is where we nail our box together. 
+    -set this to relative position for child elements to reference to.
+    -transform-style is set to preserve-3d because I wanted to keep the look as the text turns with the box. 
+      You can also set this to flat, but its not near as cool. 
+---------------------------------------------------------------------------*/
+
+
+.box-wrapper{
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;    
+}
+/*-------------------------------------------------------------------------
+Here I am just giving the box its needed dimesions and setting them to absolute so nothing gets any ideas of wandering off.
+    -PLEASE NOTE: the border has 2px and our w:98 h:98 making it a total of 100px per length. (this is important when we translate later)
+-------------------------------------------------------------------------*/
+.box-wrapper div{
+    width: 248px;
+    height: 248px;
+    position: absolute;    
+    border: 2px solid rgb(216, 210, 210);
+    border-radius: 5px;
+}
+
+.box-wrapper div p{
+    line-height: 5;
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 36px;
+    font-weight: bold;
+}
+/*----------------------------------------------------------------------
+Since our sides are 100px we only need to move our box sides 50px to get the edges to match up without gaps.
+    -Meaning "translate" moves to the position relative to your .box-wrapper. (You can play with this code to see it in action, try to take a visible section of the box and take it down 10). 
+    -Also I use "rotate" y and x to turn our box sheets (.box-wrapper div's)
+-----------------------------------------------------------------------*/
+.front{
+    transform: translateZ(124px) rotateY(0deg);
+}
+.back{
+    transform: translateZ(-124px) rotateY(180deg);
+}
+.top{
+    transform: translateY(-124px) rotateX(90deg);
+}
+.bottom{
+    transform: translateY(124px) rotateX(-90deg);
+}
+
+.right{
+    transform: translateX(124px) rotateY(90deg);
+}
+.left{
+    transform: translateX(-124px) rotateY(270deg);
+}
+
+/*-----------------------------------------------------------------------
+Then after all of this we can use our cool box-wrapper to turn this baby
+Hope this is helpful! :) Enjoy!
+-------------------------------------------------------------------------*/
+
+.box .box-wrapper{    
+    transform: rotateY(45deg);
+    
+}
