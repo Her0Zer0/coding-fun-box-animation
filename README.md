@@ -3,4 +3,4 @@
 
  This box floats, twirls, twists, explodes, and reconstructs in the body space.  Enjoy!
 
- ![screen capture of code animation](./assets/animation.gif)
+ ![screen capture of code animation](./floating-box-animation/assets/animation.gif)
